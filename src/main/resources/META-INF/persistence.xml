@@ -1,0 +1,28 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <!-- Define persistence unit -->
+    <persistence-unit name="persistenceDevPredator">
+    	
+    	<!-- Define la clase para Hibernate que implementa JPA. -->
+    	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    	<class>com.devpredator.practicaspringjsf.entity.Menu</class>
+    	<class>com.devpredator.practicaspringjsf.entity.Restaurante</class>
+    	<class>com.devpredator.practicaspringjsf.entity.TipoRestaurante</class>
+    	
+    	<!-- Define las clases que seran mappeadas al configurarse la conexion a la base de datos. -->
+    	
+    	<properties>
+    		<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+    		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/restaurante?serverTimezone=UTC"/>
+<!--     		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/restaurante"/> -->
+    		<property name="javax.persistence.jdbc.user" value="root"/>
+    		<property name="javax.persistence.jdbc.password" value="gtHDPal1"/>
+    	
+    		<property name="hibernate.show_sql" value="true"/>
+    		<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+    	</properties>
+    	
+    </persistence-unit>
+    
+</persistence>
